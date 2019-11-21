@@ -99,6 +99,8 @@ public:
     G_BigInt operator/=(const G_BigInt number);
     //multiple by own
     G_BigInt operator*=(const G_BigInt number);
+    //vagsesh
+    G_BigInt operator%=(const G_BigInt number);
     //minus
     G_BigInt operator-();
 };
@@ -112,6 +114,12 @@ G_BigInt G_BigInt::operator-()
 G_BigInt G_BigInt::operator*=(const G_BigInt number)
 {
     *this = *this * number;
+    return (*this);
+}
+//vagsesh by own
+G_BigInt G_BigInt::operator%=(const G_BigInt number)
+{
+    *this = *this % number;
     return (*this);
 }
 //divide by own
@@ -417,5 +425,6 @@ bool G_BigInt::operator>(const G_BigInt &number) const
 }
 int main()
 {
+
     return 0;
 }
