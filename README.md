@@ -31,7 +31,7 @@
 <pre> we can do : x+=y; x-=y; x*=y; x/=y;x%=y </pre>
 <pre> usage is as like as we do in integer but here both should be G_BigInt </pre>
 <h3>sign change : </h3>
-<p>we change change sign as we do in integer : x=-x; here x value will be -x.<br> we need to use - before the variable </p>
+<p>we change sign as we do in integer : x=-x; here x value will be -x.<br> we need to use - before the variable </p>
 
 --Thank You
 <pre><b>Grim Firefly</b> </pre>
