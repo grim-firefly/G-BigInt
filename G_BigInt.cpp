@@ -1,3 +1,5 @@
+/* Bismillahir Rahmanir Rahim*/
+// Author: Grim Firefly
 #include <bits/stdc++.h>
 using namespace std;
 
