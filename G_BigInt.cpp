@@ -143,15 +143,15 @@ G_BigInt G_BigInt::operator+=(const G_BigInt number)
     return (*this);
 }
 
-//increment
+// increment
 G_BigInt G_BigInt::operator++(int)
 {
     G_BigInt nn;
     nn = *this;
-    if (Bnum[Bnum.size() - 1] != '9')
-    {
+    if (Bnum[Bnum.size() - 1] != '9' and sign == 1)
         Bnum[Bnum.size() - 1]++;
-    }
+    else if (Bnum[Bnum.size() - 1] != '0' and sign == -1)
+        Bnum[Bnum.size() - 1]--, headzero();
     else
     {
         G_BigInt number("1");
@@ -161,10 +161,10 @@ G_BigInt G_BigInt::operator++(int)
 }
 G_BigInt G_BigInt::operator++()
 {
-    if (Bnum[Bnum.size() - 1] != '9')
-    {
+    if (Bnum[Bnum.size() - 1] != '9' and sign == 1)
         Bnum[Bnum.size() - 1]++;
-    }
+    else if (Bnum[Bnum.size() - 1] != '0' and sign == -1)
+        Bnum[Bnum.size() - 1]--, headzero();
     else
     {
         G_BigInt number("1");
@@ -177,9 +177,13 @@ G_BigInt G_BigInt::operator--(int)
 {
     G_BigInt nn;
     nn = *this;
-    if (Bnum[Bnum.size() - 1] != '0')
+    if (Bnum[Bnum.size() - 1] != '0' and sign == 1)
     {
-        Bnum[Bnum.size() - 1]--;
+        Bnum[Bnum.size() - 1]--, headzero();
+    }
+    else if (Bnum[Bnum.size() - 1] != '9' and sign == -1)
+    {
+        Bnum[Bnum.size() - 1]++;
     }
     else
     {
@@ -190,9 +194,13 @@ G_BigInt G_BigInt::operator--(int)
 }
 G_BigInt G_BigInt::operator--()
 {
-    if (Bnum[Bnum.size() - 1] != '0')
+    if (Bnum[Bnum.size() - 1] != '0' and sign == 1)
     {
-        Bnum[Bnum.size() - 1]--;
+        Bnum[Bnum.size() - 1]--, headzero();
+    }
+    else if (Bnum[Bnum.size() - 1] != '9' and sign == -1)
+    {
+        Bnum[Bnum.size() - 1]++;
     }
     else
     {
@@ -427,6 +435,6 @@ bool G_BigInt::operator>(const G_BigInt &number) const
 }
 int main()
 {
-
+    
     return 0;
 }
